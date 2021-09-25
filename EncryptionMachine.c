@@ -15,9 +15,35 @@ void printIntro() {
 	puts(intro);
 }
 
-/*@param */
-void encryptLetter(char letter) {
+int indexOf(char letter) {
+	for (int i = 0; i < stringLength(ALPHABET); ++i)
+	{
+		if (letter == ALPHABET[i])
+		{
+			return i;
+		}
+	}
+	return -1;
+}
 
+int stringLength(char* string) {
+	int i = 0;
+	while (string[i] != '\n')
+	{
+		++i;
+	}
+	return i;
+}
+
+/* @param letter: the letter to encrypt
+*/
+char encryptLetter(char letter) {
+	int alphabetLength = stringLength(ALPHABET);
+	int oldLetterIndex = indexOf(letter);
+	int newLetterIndex = oldLetterIndex % alphabetLength;
+
+	char encryptedLetter = ALPHABET[newLetterIndex];
+	return encryptedLetter;
 }
 
 /*@param */
