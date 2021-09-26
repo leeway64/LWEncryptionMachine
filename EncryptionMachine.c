@@ -1,7 +1,6 @@
-//
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "EncryptionMachine.h"
 
 const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 #define SHIFT 3
@@ -48,9 +47,4 @@ char encryptLetter(char letter) {
 
 /*@param */
 void encryptWord(char word[]) {
-}
-
-int main() {
-	printIntro();
-	return 0;
 }
