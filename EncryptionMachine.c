@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "EncryptionMachine.h"
 
 const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz";
@@ -15,7 +16,7 @@ void printIntro() {
 }
 
 int indexOf(char letter) {
-	for (int i = 0; i < stringLength(ALPHABET); ++i)
+	for (int i = 0; i < strlen(ALPHABET); ++i)
 	{
 		if (letter == ALPHABET[i])
 		{
@@ -25,21 +26,19 @@ int indexOf(char letter) {
 	return -1;
 }
 
-int stringLength(char* string) {
-	int i = 0;
-	while (string[i] != '\n')
-	{
-		++i;
-	}
-	return i;
+void getKey(char* str) {
+	char* text = "";
+	sprintf(text, "Encrypted messages use a shared keyword to decrypt.\n");
+	sprintf(text + strlen(text), "Enter key: ");
+	puts(text);
 }
 
 /* @param letter: the letter to encrypt
 */
 char encryptLetter(char letter) {
-	int alphabetLength = stringLength(ALPHABET);
+	int alphabetLength = strlen(ALPHABET);
 	int oldLetterIndex = indexOf(letter);
-	int newLetterIndex = oldLetterIndex % alphabetLength;
+	int newLetterIndex = (oldLetterIndex + SHIFT) % alphabetLength;
 
 	char encryptedLetter = ALPHABET[newLetterIndex];
 	return encryptedLetter;
@@ -47,4 +46,9 @@ char encryptLetter(char letter) {
 
 /*@param */
 void encryptWord(char word[]) {
+	for (int i = 0; i < strlen(word); ++i)
+	{
+		word[i] = encryptLetter(word[i]);
+	}
+
 }

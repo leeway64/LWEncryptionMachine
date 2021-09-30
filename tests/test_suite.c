@@ -25,17 +25,30 @@ void testEncryptLetter(CuTest* tc) {
 
 }
 
-void testCopyString(CuTest* tc) {
-    
-}
-
 void testEncryptWord(CuTest* tc) {
-    /*CuAssertStrEquals(tc);
-    CuAssertStrEquals(tc);
-    CuAssertStrEquals(tc);
-    CuAssertStrEquals(tc);
-    CuAssertStrEquals(tc);
-    CuAssertStrEquals(tc);*/
+    char* str1 = "play";
+    encryptWord(str1);
+    CuAssertStrEquals(tc, str1, "sodb");
+
+    char* str2 = "cseonefortytwo";
+    encryptWord(str2);
+    CuAssertStrEquals(tc, str2, "fvhrqhiruwbwzr");
+    
+    char* str3 = "the";
+    encryptWord(str3);
+    CuAssertStrEquals(tc, str3, "wkh");
+
+    char* str4 = "jumps";
+    encryptWord(str4);
+    CuAssertStrEquals(tc, str4, "mxpsv");
+
+    char* str5 = "a";
+    encryptWord(str5);
+    CuAssertStrEquals(tc, str5, "d");
+
+    char* str6 = "science";
+    encryptWord(str6);
+    CuAssertStrEquals(tc, str6, "vflhqfh");
 
 }
 
@@ -44,7 +57,6 @@ CuSuite* EncryptionMachineGetSuite() {
     SUITE_ADD_TEST(suite, testIndexOf);
     SUITE_ADD_TEST(suite, testEncryptLetter);
     SUITE_ADD_TEST(suite, testEncryptWord);
-    SUITE_ADD_TEST(suite, testCopyString);
     return suite;
 }
 

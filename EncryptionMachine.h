@@ -5,8 +5,8 @@ void printIntro();
 
 int indexOf(char letter);
 
-int stringLength(char* string);
-
 char encryptLetter(char letter);
+
+void getKey(char* str);
 
 void encryptWord(char word[]);
