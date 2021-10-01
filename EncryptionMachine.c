@@ -15,22 +15,25 @@ void printIntro() {
 	puts(intro);
 }
 
-int indexOf(char letter) {
-	for (int i = 0; i < strlen(ALPHABET); ++i)
-	{
-		if (letter == ALPHABET[i])
-		{
-			return i;
-		}
-	}
-	return -1;
-}
+void encryptKey() {
+	char key[128];
+	char encryptedKey[128];
 
-void getKey(char* str) {
 	char* text = "";
 	sprintf(text, "Encrypted messages use a shared keyword to decrypt.\n");
-	sprintf(text + strlen(text), "Enter key: ");
-	puts(text);
+	sprintf(text + strlen(text), "  Enter key: ");
+	printf("%s", text);
+	fgets(key, 128, stdin);
+	
+	key[strlen(key) - 1] = '\0';  // Remove the newline character captured by fgets
+	strcpy(encryptedKey, key);
+	encryptWord(encryptedKey);
+	printf("    \"%s\" has been encrypted to: %s\n", key, encryptedKey);
+}
+
+void encryptMessage() {
+	printf("How many words is your message? ");
+	printf("Message fully encrypted. Happy secret messaging!");
 }
 
 /* @param letter: the letter to encrypt
@@ -50,5 +53,15 @@ void encryptWord(char word[]) {
 	{
 		word[i] = encryptLetter(word[i]);
 	}
+}
 
+int indexOf(char letter) {
+	for (int i = 0; i < strlen(ALPHABET); ++i)
+	{
+		if (letter == ALPHABET[i])
+		{
+			return i;
+		}
+	}
+	return -1;
 }

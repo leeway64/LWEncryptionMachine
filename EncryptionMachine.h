@@ -3,10 +3,12 @@
 
 void printIntro();
 
-int indexOf(char letter);
+void encryptKey();
+
+void encryptMessage();
 
 char encryptLetter(char letter);
 
-void getKey(char* str);
-
 void encryptWord(char word[]);
+
+int indexOf(char letter);

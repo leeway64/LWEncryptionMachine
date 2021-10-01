@@ -1,4 +1,4 @@
-// 
+// The entry point for the Encryption Machine.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,8 +6,8 @@
 
 
 int main() {
-	char key[128];
 	printIntro();
-	getKey(key);
+	encryptKey();
+	encryptMessage();
 	return 0;
 }
