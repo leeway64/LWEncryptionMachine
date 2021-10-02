@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <inttypes.h>
+
 #include "EncryptionMachine.h"
 
 const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz";
@@ -28,12 +30,29 @@ void encryptKey() {
 	key[strlen(key) - 1] = '\0';  // Remove the newline character captured by fgets
 	strcpy(encryptedKey, key);
 	encryptWord(encryptedKey);
-	printf("    \"%s\" has been encrypted to: %s\n", key, encryptedKey);
+	printf("    \"%s\" has been encrypted to: %s\n\n", key, encryptedKey);
 }
 
 void encryptMessage() {
+	uint64_t numberOfWords;
 	printf("How many words is your message? ");
-	printf("Message fully encrypted. Happy secret messaging!");
+	scanf("%d", &numberOfWords);
+	// There is a remaining newline character left from stdin that isn't read by stdin. Read that,
+	// but don't do anything with it.
+	getchar();
+	for (int i = numberOfWords; i > 0; --i) {
+		char word[128];
+		char encryptedWord[128];
+		printf("  Next word: ");
+		fgets(word, 128, stdin);
+
+		word[strlen(word) - 1] = '\0';  // Remove the newline character captured by fgets
+		strcpy(encryptedWord, word);
+		encryptWord(encryptedWord);
+		printf("    \"%s\" has been encrypted to: %s\n", word, encryptedWord);
+	}
+
+	printf("\nMessage fully encrypted. Happy secret messaging!\n");
 }
 
 /* @param letter: the letter to encrypt

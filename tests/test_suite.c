@@ -14,6 +14,7 @@ void testIndexOf(CuTest* tc) {
     CuAssertIntEquals(tc, indexOf('z'), 25);
 }
 
+// encryptLetter and encryptWord were tested with a SHIFT of 3.
 void testEncryptLetter(CuTest* tc) {
     CuAssertIntEquals(tc, encryptLetter('a'), 'd');
     CuAssertIntEquals(tc, encryptLetter('d'), 'g');
