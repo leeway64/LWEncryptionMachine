@@ -1,4 +1,4 @@
-//
+// A program to encrypt a cryptographic key and a message using a Caesar cipher.
 
 
 void printIntro();

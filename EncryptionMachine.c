@@ -5,7 +5,11 @@
 
 #include "EncryptionMachine.h"
 
-const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+//const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+//const char* ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//const char* ALPHABET = "0123456789";
+const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789";
+
 #define SHIFT 3
 
 
@@ -17,6 +21,7 @@ void printIntro() {
 	puts(intro);
 }
 
+// Encrypts a user-entered cryptographic key.
 void encryptKey() {
 	char key[128];
 	char encryptedKey[128];
@@ -33,6 +38,8 @@ void encryptKey() {
 	printf("    \"%s\" has been encrypted to: %s\n\n", key, encryptedKey);
 }
 
+// Encrypts a certain message by using a cipher. The user enters the number of words to be encrypted,
+// and the program encrypts the following user-entered words.
 void encryptMessage() {
 	uint64_t numberOfWords;
 	printf("How many words is your message? ");
@@ -55,7 +62,11 @@ void encryptMessage() {
 	printf("\nMessage fully encrypted. Happy secret messaging!\n");
 }
 
-/* @param letter: the letter to encrypt
+/* Encrypts 1 letter using a Caesar cipher. The letter is encrypted by shifting the letter's position 
+in ALPHABET SHIFT spaces to the right. It basically replaces the letter with another letter further 
+down in the alphabet.
+@param The char to encrypt
+@return The encrypted char
 */
 char encryptLetter(char letter) {
 	int alphabetLength = strlen(ALPHABET);
@@ -66,7 +77,9 @@ char encryptLetter(char letter) {
 	return encryptedLetter;
 }
 
-/*@param */
+/* Encrypt a word using a Ceasar cipher.
+@param word is the string to be encrypted using the cipher. word is modified in-place.
+*/
 void encryptWord(char word[]) {
 	for (int i = 0; i < strlen(word); ++i)
 	{
@@ -74,6 +87,10 @@ void encryptWord(char word[]) {
 	}
 }
 
+/* Finds the index of a letter in ALPHABET.
+@param letter is the char whose index is to be found in ALPHABET.
+@return The index of letter in ALPHABET, or -1 if the index is not found.
+*/
 int indexOf(char letter) {
 	for (int i = 0; i < strlen(ALPHABET); ++i)
 	{
