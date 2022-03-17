@@ -1,8 +1,8 @@
-# Visual Studio stuff
-.vs/
+# Build folders
+cmake-build-*
 
-# Executables
-out/
+# IDE settings
+.idea/
 
 # Object files
 *.obj

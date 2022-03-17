@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "CuTest.h"
 #include "../EncryptionMachine.h"
 
@@ -28,30 +27,29 @@ void testEncryptLetter(CuTest* tc) {
 }
 
 void testEncryptWord(CuTest* tc) {
-    char* str1 = "play";
+    char str1[] = "play";
     encryptWord(str1);
     CuAssertStrEquals(tc, str1, "sodb");
 
-    char* str2 = "cseonefortytwo";
+    char str2[] = "cseonefortytwo";
     encryptWord(str2);
     CuAssertStrEquals(tc, str2, "fvhrqhiruwbwzr");
-    
-    char* str3 = "the";
+
+    char str3[] = "the";
     encryptWord(str3);
     CuAssertStrEquals(tc, str3, "wkh");
 
-    char* str4 = "jumps";
+    char str4[] = "jumps";
     encryptWord(str4);
     CuAssertStrEquals(tc, str4, "mxpsv");
 
-    char* str5 = "a";
+    char str5[] = "a";
     encryptWord(str5);
     CuAssertStrEquals(tc, str5, "d");
 
-    char* str6 = "science";
+    char str6[] = "science";
     encryptWord(str6);
     CuAssertStrEquals(tc, str6, "vflhqfh");
-
 }
 
 CuSuite* EncryptionMachineGetSuite() {
@@ -74,6 +72,7 @@ void RunAllTests(void) {
     printf("%s\n", output->buffer);
 }
 
-int main(void) {
+int main() {
     RunAllTests();
+    return 0;
 }

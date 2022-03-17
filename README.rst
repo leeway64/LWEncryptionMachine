@@ -7,10 +7,12 @@ and message using a Caesar cipher; more information on Caesar ciphers can be fou
 
 In general, ciphers work by transforming plaintext into ciphertext through a cipher.
 
+
 .. image:: images/Cipher_encryption_process.png
 
 The previous diagram was drawn using `PlantUML <https://plantuml.com/>`_ and rendered on
 `this <https://www.planttext.com/>`_ site.
+
 
 Consider the following execution examples.
 
@@ -31,4 +33,7 @@ This project is based on `Assessment 3 <https://courses.cs.washington.edu/course
 for `UW Seattle CSE 142 (summer 2020) <https://courses.cs.washington.edu/courses/cse142/21su/>`_.
 The assignment was originally meant to be completed in Java, but I completed it in C.
 
-The unit testing framework used for this project was `CuTest <http://cutest.sourceforge.net/>`_.
+Third Party Software
+----------------------
+
+- `CuTest <http://cutest.sourceforge.net/>`_ (zlib License): C unit testing framework.
