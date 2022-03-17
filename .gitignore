@@ -1,7 +1,7 @@
-# Build folders
+# CLion default CMake build folders
 cmake-build-*
 
-# IDE settings
+# CLion settings
 .idea/
 
 # Object files

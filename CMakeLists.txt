@@ -7,7 +7,7 @@ project ("Encryption_Machine"
 set(CMAKE_C_STANDARD 23)
 
 # Executable for the Encryption Machine
-add_executable (EncryptionMachine "main.c" "EncryptionMachine.c" "EncryptionMachine.h")
+add_executable (EncryptionMachine "src/main.c" "src/EncryptionMachine.c" "src/EncryptionMachine.h")
 
 # Executable for the test suite
-add_executable (test_suite "tests/test_suite.c" "tests/CuTest.c" "EncryptionMachine.c" "EncryptionMachine.h")
+add_executable (test_suite "tests/test_suite.c" "tests/CuTest.c" "src/EncryptionMachine.c" "src/EncryptionMachine.h")
