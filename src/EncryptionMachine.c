@@ -22,7 +22,7 @@ void printIntro() {
     puts(intro);
 }
 
-//// Encrypts a user-entered cryptographic key.
+/// Encrypts a user-entered cryptographic key.
 void encryptKey() {
 	char key[128];
 	char encryptedKey[128];
@@ -68,9 +68,9 @@ void encryptMessage() {
 /// @param letter: The char to encrypt
 /// @return The encrypted char
 char encryptLetter(char letter) {
-	int alphabetLength = strlen(ALPHABET);
-	int oldLetterIndex = indexOf(letter);
-	int newLetterIndex = (oldLetterIndex + SHIFT) % alphabetLength;
+	const int alphabetLength = strlen(ALPHABET);
+	const int oldLetterIndex = indexOf(letter);
+	const int newLetterIndex = (oldLetterIndex + SHIFT) % alphabetLength;
 
 	char encryptedLetter = ALPHABET[newLetterIndex];
 	return encryptedLetter;
