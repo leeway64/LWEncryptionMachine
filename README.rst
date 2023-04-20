@@ -27,6 +27,8 @@ the following commands:
 
 .. code-block::
 
+    plantuml
+
 
 Examples
 -----------

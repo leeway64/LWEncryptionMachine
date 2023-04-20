@@ -1,7 +1,7 @@
-// The entry point for the Encryption Machine.
-#include "EncryptionMachine.h"
+#include "LWEncryptionMachine.h"
 
-int main() {
+int main(int argc, char** argv)
+{
     printIntro();
 	encryptKey();
 	encryptMessage();

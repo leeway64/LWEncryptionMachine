@@ -2,7 +2,7 @@
 #include <string.h>
 #include <inttypes.h>
 
-#include "EncryptionMachine.h"
+#include "LWEncryptionMachine.h"
 
 const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 //const char* ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -76,7 +76,7 @@ char encryptLetter(char letter) {
 	return encryptedLetter;
 }
 
-/// Encrypt a word using a Ceasar cipher.
+/// Encrypt a word using a Caesar cipher.
 /// @param word is the string to be encrypted using the cipher. word is modified in-place.
 void encryptWord(char word[]) {
 	for (int i = 0; i < strlen(word); ++i)
