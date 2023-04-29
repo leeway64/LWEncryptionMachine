@@ -1,9 +1,8 @@
 LWEncryptionMachine
 ===================
 
-This project created a simple encryption machine that can encrypt a user-entered cryptographic key
-and message using a Caesar cipher; more information on Caesar ciphers can be found
-`here <https://en.wikipedia.org/wiki/Caesar_cipher>`_.
+LWEncryptionMachine is a simple encryption machine that can encrypt a user-entered cryptographic key
+and message using a Caesar cipher.
 
 
 Installation
@@ -13,10 +12,15 @@ Installation
 
     git clone https://github.com/leeway64/LWEncryptionMachine.git
     cd LWEncryptionMachine
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=ninja -G Ninja -S . -B ./cmake-build-release
+    cmake --build ./cmake-build-release --target LWEncryptionMachine
 
 
 An introduction to ciphers
 ---------------------------
+
+This project uses a Caesar cipher; more information on Caesar ciphers can be found
+`here <https://en.wikipedia.org/wiki/Caesar_cipher>`_.
 
 In general, ciphers work by transforming plaintext into ciphertext through a cipher.
 
@@ -31,15 +35,24 @@ the following commands:
 
 
 Examples
------------
+----------
 
 With an alphabet of "abcdefghijklmnopqrstuvwxyz0123456789", shift of 3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. code-block::
+
+    bin/LWEncryptionMachine
+
 .. image:: images/Example_letters_numbers.jpg
+
 
 With an alphabet of "0123456789", shift of 7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block::
+
+    bin/LWEncryptionMachine
 
 .. image:: images/Example_numbers.jpg
 
