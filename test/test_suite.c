@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "CuTest.h"
-#include "../src/EncryptionMachine.h"
+#include "../src/LWEncryptionMachine.h"
 
 
 void testIndexOf(CuTest* tc) {

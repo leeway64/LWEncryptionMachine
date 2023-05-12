@@ -38,7 +38,7 @@ Examples
 
 .. code-block::
 
-    bin/LWEncryptionMachine --help
+    bin/LWEncryptionMachine
 
     bin/LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
 
@@ -59,7 +59,7 @@ uncommented, and all other ALPHABETs are commented.
 
 .. code-block::
 
-    bin/test_suite
+    make run-tests
 
 
 Acknowledgements

@@ -7,5 +7,6 @@ cmake-build-*
 # Object files
 *.obj
 
-# Executables
-*.exe
+*# Ignore all files in the bin folder except for gitkeep
+bin/
+!bin/.gitkeep

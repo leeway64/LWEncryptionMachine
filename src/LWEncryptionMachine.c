@@ -12,7 +12,8 @@ const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 #define SHIFT 3
 
 
-void printIntro() {
+void printIntro()
+{
     // The longest line is 43 characters long.
     char intro[43] = "Welcome to the CSE142 Encryption Machine";
     puts(intro);
@@ -23,7 +24,8 @@ void printIntro() {
 }
 
 /// Encrypts a user-entered cryptographic key.
-void encryptKey() {
+void encryptKey()
+{
 	char key[128];
 	char encryptedKey[128];
 
@@ -39,15 +41,17 @@ void encryptKey() {
 
 /// Encrypts a certain message by using a cipher. The user enters the number of words to be encrypted,
 /// and the program encrypts the following user-entered words.
-void encryptMessage() {
+void encryptMessage()
+{
 	uint64_t numberOfWords;
 	printf("How many words is your message? ");
-	scanf("%d", &numberOfWords);
+	scanf("%ld", &numberOfWords);
 
 	// There is a remaining newline character left from stdin that isn't read by stdin. Read that,
 	// but don't do anything with it.
 	getchar();
-	for (int i = numberOfWords; i > 0; --i) {
+	for (int i = numberOfWords; i > 0; --i)
+	{
 		char word[128];
 		char encryptedWord[128];
 		printf("  Next word: ");
@@ -67,7 +71,8 @@ void encryptMessage() {
 /// down in the alphabet.
 /// @param letter: The char to encrypt
 /// @return The encrypted char
-char encryptLetter(char letter) {
+char encryptLetter(char letter/*, char ALPHABET[]*/)
+{
 	const int alphabetLength = strlen(ALPHABET);
 	const int oldLetterIndex = indexOf(letter);
 	const int newLetterIndex = (oldLetterIndex + SHIFT) % alphabetLength;
@@ -78,7 +83,8 @@ char encryptLetter(char letter) {
 
 /// Encrypt a word using a Caesar cipher.
 /// @param word is the string to be encrypted using the cipher. word is modified in-place.
-void encryptWord(char word[]) {
+void encryptWord(char word[])
+{
 	for (int i = 0; i < strlen(word); ++i)
 	{
 		word[i] = encryptLetter(word[i]);

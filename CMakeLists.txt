@@ -6,7 +6,7 @@ project ("LWEncryptionMachine"
 
 set(CMAKE_C_STANDARD 23)
 
-# Put the exe into the bin folder
+# Put the exes into the bin folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
 # Executable for the Encryption Machine
@@ -17,7 +17,7 @@ add_executable (LWEncryptionMachine
 
 # Executable for the test suite
 add_executable (test_suite
-                "tests/test_suite.c"
-                "tests/CuTest.c"
+                "test/test_suite.c"
+                "test/CuTest.c"
                 "src/LWEncryptionMachine.c"
                 "src/LWEncryptionMachine.h")
