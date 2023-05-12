@@ -12,8 +12,7 @@ Installation
 
     git clone https://github.com/leeway64/LWEncryptionMachine.git
     cd LWEncryptionMachine
-    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=ninja -G Ninja -S . -B ./cmake-build-release
-    cmake --build ./cmake-build-release --target LWEncryptionMachine
+    make build
 
 
 An introduction to ciphers
@@ -37,24 +36,30 @@ the following commands:
 Examples
 ----------
 
-With an alphabet of "abcdefghijklmnopqrstuvwxyz0123456789", shift of 3
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. code-block::
 
-    bin/LWEncryptionMachine
+    bin/LWEncryptionMachine --help
+
+    bin/LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
+
+    bin/LWEncryptionMachine 0123456789 7
+
 
 .. image:: images/Example_letters_numbers.jpg
 
+.. image:: images/Example_numbers.jpg
 
-With an alphabet of "0123456789", shift of 7
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Running unit tests
+-------------------
+
+Tests were run with ``ALPHABET`` equal to "abcdefghijklmnopqrstuvwxyz"; if you would like to run the
+unit tests, you will have to make sure, in ``main.c``, ``ALPHABET = "abcdefghijklmnopqrstuvwxyz"`` is
+uncommented, and all other ALPHABETs are commented.
 
 .. code-block::
 
-    bin/LWEncryptionMachine
-
-.. image:: images/Example_numbers.jpg
+    bin/test_suite
 
 
 Acknowledgements
@@ -68,4 +73,5 @@ The assignment was originally meant to be completed in Java, but I completed it 
 Third-party software
 ----------------------
 
+- `CMake <https://cmake.org/>`_ (BSD 3-clause License): C/C++ build system
 - `CuTest <http://cutest.sourceforge.net/>`_ (zlib License): C unit testing framework.
