@@ -25,7 +25,7 @@ In general, ciphers work by transforming plaintext into ciphertext through a cip
 
 .. image:: images/Cipher_encryption_process.png
 
-The previous diagram was drawn with `PlantUML <https://plantuml.com/>`_ to render the diagram, run
+The previous diagram was drawn with `PlantUML <https://plantuml.com/>`_. To render the diagram, run
 the following commands:
 
 .. code-block::

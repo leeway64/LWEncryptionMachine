@@ -2,12 +2,12 @@
 
 void printIntro();
 
-void encryptKey();
+void encryptKey(char *ALPHABET, int SHIFT);
 
-void encryptMessage();
+void encryptMessage(char *ALPHABET, int SHIFT);
 
-char encryptLetter(char letter);
+char encryptLetter(char letter, char *ALPHABET, int SHIFT);
 
-void encryptWord(char word[]);
+void encryptWord(char word[], char *ALPHABET, int SHIFT);
 
 int indexOf(char letter);

@@ -24,7 +24,7 @@ void printIntro()
 }
 
 /// Encrypts a user-entered cryptographic key.
-void encryptKey()
+void encryptKey(char *ALPHABET, int SHIFT)
 {
 	char key[128];
 	char encryptedKey[128];
@@ -35,13 +35,13 @@ void encryptKey()
 	
 	key[strlen(key) - 1] = '\0';  // Remove the newline character captured by fgets
 	strcpy(encryptedKey, key);
-	encryptWord(encryptedKey);
+	encryptWord(encryptedKey, ALPHABET, SHIFT);
 	printf("    \"%s\" has been encrypted to: %s\n\n", key, encryptedKey);
 }
 
 /// Encrypts a certain message by using a cipher. The user enters the number of words to be encrypted,
 /// and the program encrypts the following user-entered words.
-void encryptMessage()
+void encryptMessage(char *ALPHABET, int SHIFT)
 {
 	uint64_t numberOfWords;
 	printf("How many words is your message? ");
@@ -59,7 +59,7 @@ void encryptMessage()
 
 		word[strlen(word) - 1] = '\0';  // Remove the newline character captured by fgets
 		strcpy(encryptedWord, word);
-		encryptWord(encryptedWord);
+		encryptWord(encryptedWord, ALPHABET, SHIFT);
 		printf("    \"%s\" has been encrypted to: %s\n", word, encryptedWord);
 	}
 
@@ -71,7 +71,7 @@ void encryptMessage()
 /// down in the alphabet.
 /// @param letter: The char to encrypt
 /// @return The encrypted char
-char encryptLetter(char letter/*, char ALPHABET[]*/)
+char encryptLetter(char letter, char *ALPHABET, int SHIFT)
 {
 	const int alphabetLength = strlen(ALPHABET);
 	const int oldLetterIndex = indexOf(letter);
@@ -83,11 +83,11 @@ char encryptLetter(char letter/*, char ALPHABET[]*/)
 
 /// Encrypt a word using a Caesar cipher.
 /// @param word is the string to be encrypted using the cipher. word is modified in-place.
-void encryptWord(char word[])
+void encryptWord(char word[], char *ALPHABET, int SHIFT)
 {
 	for (int i = 0; i < strlen(word); ++i)
 	{
-		word[i] = encryptLetter(word[i]);
+		word[i] = encryptLetter(word[i], ALPHABET, SHIFT);
 	}
 }
 
