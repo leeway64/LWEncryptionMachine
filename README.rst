@@ -1,8 +1,10 @@
 LWEncryptionMachine
 ===================
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/leeway64/LWEncryptionMachine)
+.. image:: https://img.shields.io/badge/license-MIT-yellow.svg
+    :target: LICENSE.txt
+.. image:: https://img.shields.io/github/v/release/leeway64/LWEncryptionMachine
+   :alt: GitHub release (latest by date)
 
 LWEncryptionMachine is a simple encryption machine that can encrypt a user-entered cryptographic key
 and message using a Caesar cipher.
