@@ -12,7 +12,7 @@ Installation
 
     git clone https://github.com/leeway64/LWEncryptionMachine.git
     cd LWEncryptionMachine
-    make build
+    make build-all
 
 
 An introduction to ciphers
@@ -23,14 +23,26 @@ This project uses a Caesar cipher; more information on Caesar ciphers can be fou
 
 In general, ciphers work by transforming plaintext into ciphertext through a cipher.
 
-.. image:: doc/Cipher_encryption_process.png
+.. image:: doc/cipher_encryption_process.png
 
-The previous diagram was drawn with `PlantUML <https://plantuml.com/>`_. To render the diagram, run
+The previous diagram is an activity diagram drawn with `PlantUML <https://plantuml.com/>`_. To render the diagram, run
 the following commands:
 
 .. code-block::
 
-    plantuml
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install -r plantuml_requirements.txt
+    python -m plantuml doc/cipher-encryption-process.puml
+
+
+Cryptography is used in the field of espionage; to learn more about certain developments in the
+field of espionage today, run the following commands to generate and open a PDF file:
+
+
+.. code-block::
+
+    tex doc/.tex
 
 
 Examples
@@ -39,57 +51,57 @@ Examples
 .. code-block::
 
     $ bin/LWEncryptionMachine
-    	
-    	Incorrect number of arguments. Enter the alphabet and the number of letters to be shifted by.
-		For example: LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
+
+        Incorrect number of arguments. Enter the alphabet and the number of letters to be shifted by.
+        For example: LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
 
 
-    $ bin/LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
+        $ bin/LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
 
-		Welcome to LWEncryptionMachine
-		The program lets you encrypt a message
-		with a key for your recipient to decrypt!
+        Welcome to LWEncryptionMachine
+        The program lets you encrypt a message
+        with a key for your recipient to decrypt!
 
-		Alphabet entered: abcdefghijklmnopqrstuvwxyz0123456789
-		Shift value entered: 3
+        Alphabet entered: abcdefghijklmnopqrstuvwxyz0123456789
+        Shift value entered: 3
 
-		Encrypted messages use a shared keyword to decrypt.
-		  Enter key: Justice
-			"Justice" has been encrypted to: cxvwlfh
+        Encrypted messages use a shared keyword to decrypt.
+          Enter key: Justice
+        "Justice" has been encrypted to: cxvwlfh
 
-		How many words is your message? 2
-		  Next word: free
-			"free" has been encrypted to: iuhh
-		  Next word: tibet
-			"tibet" has been encrypted to: wlehw
+        How many words is your message? 2
+          Next word: free
+        "free" has been encrypted to: iuhh
+          Next word: tibet
+        "tibet" has been encrypted to: wlehw
 
-		Message fully encrypted. Happy secret messaging!		
-		
-		
-	$ bin/LWEncryptionMachine ABCDEFGHIJKLMNOPQRSTUVWXYZ 7
-	
-		Welcome to LWEncryptionMachine
-		The program lets you encrypt a message
-		with a key for your recipient to decrypt!
+        Message fully encrypted. Happy secret messaging!
 
-		Alphabet entered: ABCDEFGHIJKLMNOPQRSTUVWXYZ
-		Shift value entered: 7
 
-		Encrypted messages use a shared keyword to decrypt.
-		  Enter key: FREEDOM
-			"FREEDOM" has been encrypted to: MYLLKVT
+        $ bin/LWEncryptionMachine ABCDEFGHIJKLMNOPQRSTUVWXYZ 7
 
-		How many words is your message? 4
-		  Next word: EAST
-			"EAST" has been encrypted to: LHZA
-		  Next word: TURKISTAN
-			"TURKISTAN" has been encrypted to: ABYRPZAHU
-		  Next word: HONG
-			"HONG" has been encrypted to: OVUN
-		  Next word: KONG
-			"KONG" has been encrypted to: RVUN
+        Welcome to LWEncryptionMachine
+        The program lets you encrypt a message
+        with a key for your recipient to decrypt!
 
-		Message fully encrypted. Happy secret messaging!
+        Alphabet entered: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        Shift value entered: 7
+
+        Encrypted messages use a shared keyword to decrypt.
+          Enter key: FREEDOM
+            "FREEDOM" has been encrypted to: MYLLKVT
+
+        How many words is your message? 4
+          Next word: EAST
+            "EAST" has been encrypted to: LHZA
+          Next word: TURKISTAN
+            "TURKISTAN" has been encrypted to: ABYRPZAHU
+          Next word: HONG
+            "HONG" has been encrypted to: OVUN
+          Next word: KONG
+            "KONG" has been encrypted to: RVUN
+
+        Message fully encrypted. Happy secret messaging!
 
 
 Running unit tests

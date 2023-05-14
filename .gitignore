@@ -10,3 +10,6 @@ cmake-build-*
 *# Ignore all files in the bin folder except for gitkeep
 bin/
 !bin/.gitkeep
+
+# Python virtual environment
+.venv/
