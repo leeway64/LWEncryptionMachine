@@ -8,5 +8,5 @@ this project follows [semantic versioning](https://semver.org/).
 ## Unreleased
 - None
 
-## [1.0.0] - 2023-5-d
+## [1.0.0] - 2023-5-13
 - Initial release

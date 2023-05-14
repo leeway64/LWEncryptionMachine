@@ -1,6 +1,9 @@
 LWEncryptionMachine
 ===================
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/leeway64/LWEncryptionMachine)
+
 LWEncryptionMachine is a simple encryption machine that can encrypt a user-entered cryptographic key
 and message using a Caesar cipher.
 
@@ -23,10 +26,10 @@ This project uses a Caesar cipher; more information on Caesar ciphers can be fou
 
 In general, ciphers work by transforming plaintext into ciphertext through a cipher.
 
-.. image:: doc/cipher_encryption_process.png
+.. image:: doc/cipher-encryption-process.png
 
-The previous diagram is an activity diagram drawn with `PlantUML <https://plantuml.com/>`_. To render the diagram, run
-the following commands:
+The previous diagram is an `activity diagram <https://plantuml.com/activity-diagram-beta>`_ drawn
+with `PlantUML <https://plantuml.com/>`_. To render the diagram, run the following commands:
 
 .. code-block::
 
@@ -127,5 +130,6 @@ The assignment was originally meant to be completed in Java, but I completed it 
 Third-party software
 ----------------------
 
-- `CMake <https://cmake.org/>`_ (BSD 3-clause License): C/C++ build system
+- `CMake <https://cmake.org/>`_ (BSD 3-clause License): C/C++ build system.
 - `CuTest <http://cutest.sourceforge.net/>`_ (zlib License): C unit testing framework.
+- `Python-PlantUML <https://github.com/dougn/python-plantuml/>`_ (BSD-2-Clause license): Python package for generating PlantUML diagrams.
