@@ -38,11 +38,14 @@ Examples
 
 .. code-block::
 
-    bin/LWEncryptionMachine
+    $ bin/LWEncryptionMachine
+    	
+    	Incorrect number of arguments. Enter the alphabet and the number of letters to be shifted by.
+		For example: LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
 
-    bin/LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
+    $ bin/LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
 
-    bin/LWEncryptionMachine 0123456789 7
+    bin/LWEncryptionMachine 0123456789 4
 
 
 .. image:: images/Example_letters_numbers.jpg

@@ -4,15 +4,8 @@
 
 #include "LWEncryptionMachine.h"
 
-const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-//const char* ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//const char* ALPHABET = "0123456789";
-//const char* ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-#define SHIFT 3
-
-
-void printIntro()
+void printIntro(char *ALPHABET, char *SHIFT)
 {
     // The longest line is 43 characters long.
     char intro[43] = "Welcome to the CSE142 Encryption Machine";
@@ -21,6 +14,9 @@ void printIntro()
     puts(intro);
     sprintf(intro, "with a key for your recipient to decrypt!\n");
     puts(intro);
+    
+    printf("Alphabet entered: %s\n", ALPHABET);
+    printf("Shift value entered: %s\n\n", SHIFT);
 }
 
 /// Encrypts a user-entered cryptographic key.
@@ -74,7 +70,7 @@ void encryptMessage(char *ALPHABET, int SHIFT)
 char encryptLetter(char letter, char *ALPHABET, int SHIFT)
 {
 	const int alphabetLength = strlen(ALPHABET);
-	const int oldLetterIndex = indexOf(letter);
+	const int oldLetterIndex = indexOf(letter, ALPHABET);
 	const int newLetterIndex = (oldLetterIndex + SHIFT) % alphabetLength;
 
 	char encryptedLetter = ALPHABET[newLetterIndex];
@@ -94,7 +90,8 @@ void encryptWord(char word[], char *ALPHABET, int SHIFT)
 /// Finds the index of a letter in ALPHABET.
 /// @param letter is the char whose index is to be found in ALPHABET.
 /// @return The index of letter in ALPHABET, or -1 if the index is not found.
-int indexOf(char letter) {
+int indexOf(char letter, const char *ALPHABET)
+{
 	for (int i = 0; i < strlen(ALPHABET); ++i)
 	{
 		if (letter == ALPHABET[i])

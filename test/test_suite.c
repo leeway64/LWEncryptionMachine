@@ -4,17 +4,15 @@
 
 
 void testIndexOf(CuTest* tc) {
-    CuAssertIntEquals(tc, indexOf('a'), 0);
-    CuAssertIntEquals(tc, indexOf('b'), 1);
-    CuAssertIntEquals(tc, indexOf('c'), 2);
-    CuAssertIntEquals(tc, indexOf('s'), 18);
-    CuAssertIntEquals(tc, indexOf('x'), 23);
-    CuAssertIntEquals(tc, indexOf('y'), 24);
-    CuAssertIntEquals(tc, indexOf('z'), 25);
+    CuAssertIntEquals(tc, indexOf('a', "abcdefghijklmnopqrstuvwxyz"), 0);
+    CuAssertIntEquals(tc, indexOf('b', "abcdefghijklmnopqrstuvwxyz"), 1);
+    CuAssertIntEquals(tc, indexOf('c', "abcdefghijklmnopqrstuvwxyz"), 2);
+    CuAssertIntEquals(tc, indexOf('s', "abcdefghijklmnopqrstuvwxyz"), 18);
+    CuAssertIntEquals(tc, indexOf('x', "abcdefghijklmnopqrstuvwxyz"), 23);
+    CuAssertIntEquals(tc, indexOf('y', "abcdefghijklmnopqrstuvwxyz"), 24);
+    CuAssertIntEquals(tc, indexOf('z', "abcdefghijklmnopqrstuvwxyz"), 25);
 }
 
-// encryptLetter and encryptWord were tested with a SHIFT of 3 and an alphabet composed of the 26
-// lowercase English letters.
 void testEncryptLetter(CuTest* tc) {
     CuAssertIntEquals(tc, encryptLetter('a', "abcdefghijklmnopqrstuvwxyz", 3), 'd');
     CuAssertIntEquals(tc, encryptLetter('d', "abcdefghijklmnopqrstuvwxyz", 3), 'g');

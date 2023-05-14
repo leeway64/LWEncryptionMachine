@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "LWEncryptionMachine.h"
 
 int main(int argc, char** argv)
@@ -12,9 +15,9 @@ int main(int argc, char** argv)
     char *ALPHABET = argv[1];
     char *SHIFT_char = argv[2];
 
-    int SHIFT = (int) SHIFT_char
+    int SHIFT = atoi(SHIFT_char);
 
-    printIntro();
+    printIntro(ALPHABET, SHIFT_char);
 	encryptKey(ALPHABET, SHIFT);
 	encryptMessage(ALPHABET, SHIFT);
 	return 0;
