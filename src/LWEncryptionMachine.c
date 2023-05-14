@@ -8,7 +8,7 @@
 void printIntro(char *ALPHABET, char *SHIFT)
 {
     // The longest line is 43 characters long.
-    char intro[43] = "Welcome to the CSE142 Encryption Machine";
+    char intro[43] = "Welcome to LWEncryptionMachine";
     puts(intro);
     sprintf(intro, "The program lets you encrypt a message");
     puts(intro);
