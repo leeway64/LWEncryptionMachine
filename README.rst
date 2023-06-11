@@ -41,21 +41,12 @@ with `PlantUML <https://plantuml.com/>`_. To render the diagram, run the followi
     python -m plantuml doc/cipher-encryption-process.puml
 
 
-Cryptography is used in the field of espionage; to learn more about certain developments in the
-field of espionage today, run the following commands to generate and open a PDF file:
-
-
-.. code-block::
-
-    tex doc/.tex
-
-
 Examples
 ----------
 
 .. code-block::
 
-    $ bin/LWEncryptionMachine
+        $ bin/LWEncryptionMachine
 
         Incorrect number of arguments. Enter the alphabet and the number of letters to be shifted by.
         For example: LWEncryptionMachine abcdefghijklmnopqrstuvwxyz0123456789 3
@@ -118,14 +109,14 @@ Running unit tests
 
 Some unit tests were influenced by certain examples given in the files section of
 `Assessment 3 <https://courses.cs.washington.edu/courses/cse142/21su/assessments/a3/>`_
-for `UW Seattle CSE 142 (summer 2020) <https://courses.cs.washington.edu/courses/cse142/21su/>`_.
+for `UW Seattle CSE 142 (summer 2021) <https://courses.cs.washington.edu/courses/cse142/21su/>`_.
 
 
 Acknowledgements
 ------------------
 
 This project is based on `Assessment 3 <https://courses.cs.washington.edu/courses/cse142/21su/assessments/a3/>`_
-for `UW Seattle CSE 142 (summer 2020) <https://courses.cs.washington.edu/courses/cse142/21su/>`_.
+for `UW Seattle CSE 142 (summer 2021) <https://courses.cs.washington.edu/courses/cse142/21su/>`_.
 The assignment was originally meant to be completed in Java, but I completed it in C.
 
 
